@@ -1,0 +1,2 @@
+# Sequelize Inventory-Transaction Model
+
