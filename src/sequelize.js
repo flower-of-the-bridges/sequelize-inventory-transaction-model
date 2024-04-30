@@ -9,7 +9,7 @@ const {
   MYSQL_DATABASE = 'test',
   MYSQL_HOST = 'localhost:3306',
   PGSQL_USER = 'postgres',
-  PGSQL_PASSWORD = 'password',
+  PGSQL_PASSWORD = 'example',
   PGSQL_HOST = 'localhost:5432',
   PGSQL_DATABASE = 'test'
 } = process.env
