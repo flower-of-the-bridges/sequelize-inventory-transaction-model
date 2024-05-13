@@ -74,7 +74,7 @@ module.exports = fp(async function (fastify, opts, done) {
       },
       'generating random data every GENERATE_INTERVAL_MS milliseconds')
       await generate(log, generationMetadata)
-    }, GENERATE_INTERVAL_MS)
+    }, Number(GENERATE_INTERVAL_MS))
 
     reply.status(201).send()
   })
