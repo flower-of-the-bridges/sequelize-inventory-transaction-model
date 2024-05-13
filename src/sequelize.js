@@ -69,7 +69,10 @@ module.exports = fp(async function (fastify, opts, done) {
     }
     const generationMetadata = { started: false }
     generation.intervalId = setInterval(async () => {
-      log.info('generating random data')
+      log.info({
+        GENERATE_INTERVAL_MS
+      },
+      'generating random data every GENERATE_INTERVAL_MS milliseconds')
       await generate(log, generationMetadata)
     }, GENERATE_INTERVAL_MS)
 
