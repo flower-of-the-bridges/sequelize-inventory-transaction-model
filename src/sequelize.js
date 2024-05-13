@@ -11,7 +11,8 @@ const {
   PGSQL_USER = 'postgres',
   PGSQL_PASSWORD = 'example',
   PGSQL_HOST = 'localhost:5432',
-  PGSQL_DATABASE = 'test'
+  PGSQL_DATABASE = 'test',
+  GENERATE_INTERVAL_MS = 2000
 } = process.env
 
 module.exports = fp(async function (fastify, opts, done) {
@@ -70,7 +71,7 @@ module.exports = fp(async function (fastify, opts, done) {
     generation.intervalId = setInterval(async () => {
       log.info('generating random data')
       await generate(log, generationMetadata)
-    }, 2000)
+    }, GENERATE_INTERVAL_MS)
 
     reply.status(201).send()
   })
